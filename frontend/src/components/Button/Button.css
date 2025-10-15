@@ -1,0 +1,3 @@
+.app-btn{padding:8px 12px;border-radius:8px;border:none}
+.app-btn.primary{background:var(--primary)}
+.app-btn.ghost{background:transparent;border:1px solid rgba(0,0,0,0.08)}

@@ -1,0 +1,7 @@
+/* SignUp form styles */
+.auth-form {
+    background: var(--card);
+    padding: 12px;
+    border-radius: 10px;
+    max-width: 420px;
+}

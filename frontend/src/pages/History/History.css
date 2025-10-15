@@ -1,0 +1,5 @@
+/* Styles for History page */
+.history-list{list-style:none;padding:0;margin:0}
+.history-item{background:var(--card);padding:10px;border-radius:8px;margin-bottom:8px;display:flex;justify-content:space-between}
+.history-item.deleted{opacity:0.7}
+.small{font-size:12px}
