@@ -1,0 +1,20 @@
+.goal-card{
+  background:var(--card);
+  border-radius:10px;
+  padding:12px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  box-shadow:0 1px 4px rgba(0,0,0,0.05);
+  margin-bottom:12px;
+}
+.goal-main{display:flex;align-items:center}
+.goal-check input{width:18px;height:18px}
+.goal-content{margin-left:12px}
+.goal-content h3{margin:0 0 6px 0}
+.goal-content .muted{margin:0;color:var(--muted)}
+.goal-actions .btn{margin-left:8px}
+.goal-card.completed{opacity:0.8}
+.btn{background:transparent;border:1px solid #ddd;padding:6px 10px;border-radius:8px}
+.btn.edit{background:var(--accent-blue)}
+.btn.delete{background:var(--accent-pink)}
