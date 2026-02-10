@@ -1,6 +1,29 @@
 /* Styles for Home page */
-.home-header{display:flex;flex-direction:column;margin-bottom:16px}
-.progress-row{display:flex;align-items:center;gap:12px}
-.add-wrap{margin-left:auto}
-.add-form{background:var(--card);padding:12px;border-radius:10px;margin-bottom:16px}
-.goals-list{margin-top:12px}
+.home-page{
+	display:flex;
+	flex-direction:column;
+	gap:18px;
+}
+.home-hero{
+	display:flex;
+	justify-content:space-between;
+	align-items:center;
+	gap:16px;
+	padding:20px 22px;
+	background:var(--card);
+	border:1px solid var(--border);
+	border-radius:16px;
+	box-shadow:var(--shadow);
+}
+.home-hero h1{margin:0;font-size:24px}
+.home-hero p{margin:6px 0 0 0;color:var(--muted)}
+.hero-actions{display:flex;align-items:center;gap:12px;min-width:260px}
+.progress-row{flex:1}
+.add-form{
+	background:var(--card);
+	padding:16px;
+	border-radius:14px;
+	border:1px solid var(--border);
+	box-shadow:var(--shadow);
+}
+.goals-list{margin-top:4px}

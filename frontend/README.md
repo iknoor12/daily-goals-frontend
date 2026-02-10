@@ -14,3 +14,4 @@ App pages:
 - Login / SignUp: simple forms (no auth)
 
 To connect to backend later, set the API base URL in components or use environment variables.
+# daily-goals-frontend

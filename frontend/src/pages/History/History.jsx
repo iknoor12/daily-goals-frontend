@@ -7,7 +7,8 @@ export default function History(){
   const history = mock.filter(g => g.completed || g.deleted)
   return (
     <div className="history container">
-      <h1>History</h1>
+      <h1 className="section-title">History</h1>
+      <p className="section-subtitle">Review completed and archived goals.</p>
       {history.length === 0 && <p className="muted">No completed or deleted goals yet.</p>}
       <ul className="history-list">
         {history.map(h => (

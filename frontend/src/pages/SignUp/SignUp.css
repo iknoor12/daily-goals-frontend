@@ -1,7 +1,19 @@
 /* SignUp form styles */
+.signup{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-height:70vh;
+}
 .auth-form {
     background: var(--card);
-    padding: 12px;
-    border-radius: 10px;
-    max-width: 420px;
+    padding: 20px;
+    border-radius: 16px;
+    border:1px solid var(--border);
+    box-shadow: var(--shadow);
+    max-width: 440px;
+    width:100%;
+}
+.auth-form h1{
+    margin-top:0;
 }

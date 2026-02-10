@@ -1,3 +1,24 @@
-.app-btn{padding:8px 12px;border-radius:8px;border:none}
-.app-btn.primary{background:var(--primary)}
-.app-btn.ghost{background:transparent;border:1px solid rgba(0,0,0,0.08)}
+.app-btn{
+	padding:10px 14px;
+	border-radius:10px;
+	border:none;
+	font-weight:600;
+	font-size:15px;
+	transition:all 0.2s ease;
+}
+.app-btn.primary{
+	background:var(--primary);
+	color:white;
+}
+.app-btn.primary:hover{
+    background:var(--primary-dark);
+}
+.app-btn.ghost{
+	background:transparent;
+	border:1px solid var(--border);
+	color:var(--text);
+}
+.app-btn.secondary{
+	background:rgba(16,185,129,0.12);
+	color:var(--accent);
+}

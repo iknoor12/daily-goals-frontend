@@ -45,13 +45,16 @@ export default function Home(){
 
   return (
     <div className="home-page container">
-      <div className="home-header">
-        <h1>Today's Goals</h1>
-        <div className="progress-row">
-          <ProgressBar percent={percent} />
-          <div className="add-wrap">
-            <Button onClick={() => setShowAdd(s => !s)}>Add Goal</Button>
+      <div className="home-hero">
+        <div>
+          <h1>Today's Goals</h1>
+          <p>Track daily progress and keep momentum.</p>
+        </div>
+        <div className="hero-actions">
+          <div className="progress-row">
+            <ProgressBar percent={percent} />
           </div>
+          <Button onClick={() => setShowAdd(s => !s)}>Add Goal</Button>
         </div>
       </div>
 
