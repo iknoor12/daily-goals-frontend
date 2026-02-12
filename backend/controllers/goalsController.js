@@ -1,17 +1,23 @@
 const Goal = require('../models/Goal');
 
 const listGoals = async (req, res) => {
-  const goals = await Goal.find().sort({ createdAt: -1 });
+  const { userEmail } = req.query;
+  const filter = userEmail ? { userEmail } : {};
+  const goals = await Goal.find(filter).sort({ createdAt: -1 });
   res.json(goals);
 };
 
 const createGoal = async (req, res) => {
-  const { title, description } = req.body;
+  const { title, description, userEmail } = req.body;
   if (!title) {
     return res.status(400).json({ error: 'Title is required' });
   }
+  if (!userEmail) {
+    return res.status(400).json({ error: 'User email is required' });
+  }
 
   const goal = await Goal.create({
+    userEmail,
     title,
     description: description || ''
   });

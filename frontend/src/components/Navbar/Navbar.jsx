@@ -3,7 +3,7 @@ import { NavLink, useNavigate } from 'react-router-dom'
 import './Navbar.css'
 
 // Navbar with links to main pages
-export default function Navbar({ isAuthed, onLogout }){
+export default function Navbar({ isAuthed, onLogout, userName }){
   const navigate = useNavigate()
 
   function handleLogout(){
@@ -13,7 +13,10 @@ export default function Navbar({ isAuthed, onLogout }){
 
   return (
     <nav className="navbar">
-      <div className="nav-brand">Daily Goals Tracker</div>
+      <div className="nav-left">
+        <div className="nav-brand">Daily Goals Tracker</div>
+        {isAuthed && userName && <span className="nav-user">Hi, {userName}</span>}
+      </div>
       <div className="nav-links">
         {isAuthed ? (
           <>

@@ -7,6 +7,7 @@ const cors = require('cors');
 const dotenv = require('dotenv');
 const connectDb = require('./config/db');
 const goalsRouter = require('./routes/goals');
+const usersRouter = require('./routes/users');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -19,6 +20,7 @@ app.use(bodyParser.json()); // Parse JSON request bodies
 
 // API routes
 app.use('/goals', goalsRouter);
+app.use('/users', usersRouter);
 
 // Fallback route
 app.use((req, res) => {
