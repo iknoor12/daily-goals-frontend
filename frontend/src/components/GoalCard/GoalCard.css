@@ -13,6 +13,10 @@
 .goal-check input{width:18px;height:18px}
 .goal-content h3{margin:0 0 6px 0;font-size:16px}
 .goal-content .muted{margin:0;color:var(--muted)}
+.goal-date{
+  margin-top:6px;
+  font-size:12px;
+}
 .goal-actions{display:flex;gap:8px}
 .goal-card.completed{opacity:0.75}
 .btn{

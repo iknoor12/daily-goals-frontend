@@ -50,6 +50,16 @@ export default function History({ userEmail }){
             <div>
               <strong>{h.title}</strong>
               <div className="muted small">{h.description}</div>
+              {h.taskDate && (
+                <div className="muted small">
+                  {new Date(h.taskDate.length === 10 ? `${h.taskDate}T00:00:00` : h.taskDate).toLocaleDateString(undefined, {
+                    weekday: 'short',
+                    month: 'short',
+                    day: 'numeric',
+                    year: 'numeric'
+                  })}
+                </div>
+              )}
             </div>
             <div className="meta muted small">
               {h.deleted ? 'Deleted' : h.completed ? 'Completed' : 'Active'}

@@ -17,6 +17,17 @@ export default function Home({ userEmail }){
   const [showAdd, setShowAdd] = useState(false)
   const [title, setTitle] = useState('')
   const [description, setDescription] = useState('')
+  const [taskDate, setTaskDate] = useState(() => {
+    return new Date().toISOString().slice(0, 10)
+  })
+
+  const selectedDate = taskDate ? new Date(`${taskDate}T00:00:00`) : new Date()
+  const dayLabel = selectedDate.toLocaleDateString(undefined, { weekday: 'long' })
+  const dateLabel = selectedDate.toLocaleDateString(undefined, {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  })
 
   useEffect(() => {
     if (!userEmail) return
@@ -49,8 +60,9 @@ export default function Home({ userEmail }){
 
   function addGoal(){
     if (!title) return alert('Please enter a title')
+    if (!taskDate) return alert('Please choose a date')
     if (!userEmail) return alert('Missing user')
-    const payload = { title, description, userEmail }
+    const payload = { title, description, userEmail, taskDate }
     fetch(`${apiBase}/goals`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -64,6 +76,7 @@ export default function Home({ userEmail }){
         setGoals((prev) => [created, ...prev])
         setTitle('')
         setDescription('')
+        setTaskDate(new Date().toISOString().slice(0, 10))
         setShowAdd(false)
       })
       .catch(() => alert('Failed to create goal'))
@@ -140,6 +153,17 @@ export default function Home({ userEmail }){
 
       {showAdd && (
         <div className="add-form">
+          <div className="add-form-meta">
+            <div className="meta-item">
+              <span className="meta-label">Day</span>
+              <span className="meta-value">{dayLabel}</span>
+            </div>
+            <div className="meta-item">
+              <span className="meta-label">Date</span>
+              <span className="meta-value">{dateLabel}</span>
+            </div>
+          </div>
+          <Input label="Choose date" type="date" value={taskDate} onChange={e=>setTaskDate(e.target.value)} />
           <Input label="Title" value={title} onChange={e=>setTitle(e.target.value)} />
           <Input label="Description" value={description} onChange={e=>setDescription(e.target.value)} />
           <div style={{display:'flex',gap:8}}>

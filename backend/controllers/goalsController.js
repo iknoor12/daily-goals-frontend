@@ -8,7 +8,7 @@ const listGoals = async (req, res) => {
 };
 
 const createGoal = async (req, res) => {
-  const { title, description, userEmail } = req.body;
+  const { title, description, userEmail, taskDate } = req.body;
   if (!title) {
     return res.status(400).json({ error: 'Title is required' });
   }
@@ -16,10 +16,16 @@ const createGoal = async (req, res) => {
     return res.status(400).json({ error: 'User email is required' });
   }
 
+  const parsedDate = taskDate ? new Date(taskDate) : new Date();
+  if (Number.isNaN(parsedDate.getTime())) {
+    return res.status(400).json({ error: 'Invalid task date' });
+  }
+
   const goal = await Goal.create({
     userEmail,
     title,
-    description: description || ''
+    description: description || '',
+    taskDate: parsedDate
   });
 
   res.status(201).json(goal);

@@ -1,4 +1,8 @@
-.progress-wrap{display:flex;align-items:center;gap:10px}
+.progress-wrap{
+	display:flex;
+	align-items:center;
+	gap:10px;
+}
 .progress-track{
 	flex:1;
 	height:10px;
@@ -11,4 +15,9 @@
 	background:linear-gradient(90deg,var(--primary),var(--accent));
 	border-radius:999px;
 }
-.progress-text{min-width:40px;text-align:right;color:var(--muted);font-weight:600}
+.progress-text{
+	min-width:40px;
+	text-align:right;
+	color:var(--muted);
+	font-weight:600;
+}

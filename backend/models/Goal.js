@@ -16,6 +16,10 @@ const GoalSchema = new mongoose.Schema({
     type: String,
     default: ''
   },
+  taskDate: {
+    type: Date,
+    default: Date.now
+  },
   completed: {
     type: Boolean,
     default: false

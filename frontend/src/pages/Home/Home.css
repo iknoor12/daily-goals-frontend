@@ -26,4 +26,28 @@
 	border:1px solid var(--border);
 	box-shadow:var(--shadow);
 }
+.add-form-meta{
+	display:grid;
+	grid-template-columns:repeat(auto-fit, minmax(160px, 1fr));
+	gap:12px;
+	margin-bottom:14px;
+}
+.meta-item{
+	padding:10px 12px;
+	border-radius:12px;
+	border:1px solid var(--border);
+	background:rgba(255, 255, 255, 0.6);
+}
+.meta-label{
+	display:block;
+	font-size:12px;
+	letter-spacing:0.3px;
+	text-transform:uppercase;
+	color:var(--muted);
+}
+.meta-value{
+	display:block;
+	font-weight:600;
+	margin-top:4px;
+}
 .goals-list{margin-top:4px}
